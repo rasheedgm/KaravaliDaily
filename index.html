@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <title>MyApp</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/service/InitService.js"></script>
+    <script type="text/javascript" src="js/controller/IndexPageController.js"></script>
+    <script type="text/javascript" src="js/controller/DetailPageController.js"></script>
+    
+  </head>
+  <body>
+      <div class="statusbar-overlay"></div>
+      <div class="panel-overlay"></div>
+      <!-- Left panel with reveal effect-->
+      <div class="panel panel-left panel-reveal">
+          <div class="content-block">              
+              <div class="list-block">
+                <ul>
+                  <li><a href="#detailsPage" class="close-panel">
+                      <div class="item-inner"> 
+                        <div class="item-title">Page2</div>
+                      </div></a></li>
+                  <li><a href="#index" class="close-panel">
+                      <div class="item-inner"> 
+                        <div class="item-title">Page1</div>
+                      </div></a></li>
+                  
+                </ul>
+              </div>
+          </div>
+      </div>
+    <!-- Right panel with cover effect-->
+      <div class="panel panel-right panel-cover">
+          <div class="content-block">
+        <p>Right panel content goes here</p>
+          </div>
+      </div>
+      
+      
+      
+    <div class="views">
+      <div class="view view-main">
+        
+        <!-- Navbar -->
+        <div class="navbar no-border">
+          <div class="navbar-inner">
+            <div class="left"></div>
+            <div class="center sliding">MyApp Index Page</div>
+            <div class="right"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
+          </div>
+          <div class="navbar-inner cached" data-page="detailsPage">
+            <div class="left sliding">
+              <a href="index" class="link back">
+                <i class="icon icon-back"></i><span>Back</span>
+              </a>
+            </div>
+            <div class="center sliding">Detail page</div>
+            <div class="right"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
+          </div>
+        </div>
+        
+        <!-- Pages -->
+        <div class="pages navbar-through toolbar-through">
+          
+          <!-- Page 1 -->
+          <div data-page="index" class="page" ng-controller="IndexPageController">
+            <!-- Page content-->
+            <div class="page-content">
+              Click <a href="#detailsPage">here</a> to go to page 2
+            </div>
+          </div>
+
+          <!-- Page 2 -->
+          <div data-page="detailsPage" class="page cached" ng-controller="DetailPageController">
+            <!-- Page content-->
+            <div class="page-content">
+              This is page 2
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
